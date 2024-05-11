@@ -7,22 +7,25 @@ export default function extendingTextarea(Alpine) {
 
         el.style.overflow = 'hidden';
 
-        const updateHeight = () => {
+        let initialHeight = 0;
+
+        const calculateInitialHeight = () => {
             el.style.height = 'auto'; // ? Reset the height
-            el.style.height = el.scrollHeight + 'px'; // ? Update the height to the scroll height
+            initialHeight = el.scrollHeight; // ? Calculate initial height based on content or default row size
         };
 
-        // ? Initialize the height
+        const updateHeight = () => {
+            el.style.height = 'auto'; // ? Reset the height
+            el.style.height = Math.max(el.scrollHeight, initialHeight) + 'px'; // ? Use the greater of scrollHeight or initialHeight
+        };
+
+        calculateInitialHeight();
         updateHeight();
 
         // ? Register on input
-        effect(() => {
-            el.addEventListener('input', updateHeight);
-        });
+        effect(() => el.addEventListener('input', updateHeight));
 
         // ? Clear upon unmounting
-        cleanup(() => {
-            el.removeEventListener('input', updateHeight);
-        });
+        cleanup(() => el.removeEventListener('input', updateHeight));
     });
 }
