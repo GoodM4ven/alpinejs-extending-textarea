@@ -1,6 +1,6 @@
 {
   "name": "alpinejs-extending-textarea",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "AlpineJS dynamically height-extending textarea plugin",
   "keywords": [
     "alpinejs",
