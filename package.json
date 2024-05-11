@@ -1,0 +1,34 @@
+{
+  "name": "alpinejs-extending-textarea",
+  "version": "1.0.0",
+  "description": "AlpineJS dynamically height-extending textarea plugin",
+  "keywords": [
+    "alpinejs",
+    "plugin",
+    "textarea",
+    "input",
+    "extending",
+    "expanding",
+    "tallstack"
+  ],
+  "author": "GoodM4ven <goodm4ven@proton.me>",
+  "license": "MIT",
+  "homepage": "https://github.com/GoodM4ven/alpinejs-extending-textarea#readme",
+  "bugs": {
+    "url": "https://github.com/GoodM4ven/alpinejs-extending-textarea/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GoodM4ven/alpinejs-extending-textarea.git"
+  },
+  "dependencies": {
+    "esbuild": "^0.17.19"
+  },
+  "peerDependencies": {
+    "alpinejs": "^3.13.7"
+  },
+  "main": "src/index.js",
+  "scripts": {
+    "build": "esbuild src/index.js --format=esm --bundle --minify --sourcemap --outfile=dist/alpinejs-extending-textarea.js"
+  }
+}

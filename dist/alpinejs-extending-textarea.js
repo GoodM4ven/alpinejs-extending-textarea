@@ -1,0 +1,2 @@
+function n(t){t.directive("extending-textarea",(e,{},{effect:a,cleanup:r})=>{if(e.tagName!=="TEXTAREA")throw"The `x-extending-textarea` directive must be applied to <textarea> elements only.";e.style.overflow="hidden";let i=()=>{e.style.height="auto",e.style.height=e.scrollHeight+"px"};i(),a(()=>{e.addEventListener("input",i)}),r(()=>{e.removeEventListener("input",i)})})}function x(t){t.plugin(n)}export{x as default};
+//# sourceMappingURL=alpinejs-extending-textarea.js.map
