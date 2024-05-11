@@ -2,7 +2,6 @@
     بسم الله الرحمن الرحيم
 </div>
 
-
 # AlpineJS Extending Textarea
 An [AlpineJS](https://alpinejs.dev/) **plugin** to ensure that the text-area expands as it has more input than its height can fit.
 
