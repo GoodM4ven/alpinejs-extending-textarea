@@ -7,22 +7,19 @@ export default function extendingTextarea(Alpine) {
         el.style.overflow = 'hidden';
         el.style.boxSizing = 'border-box';
 
-        const calculateInitialHeight = () => {
-            el.style.height = 'auto';
-            return el.scrollHeight + 'px';
-        };
-
-        const minHeight = calculateInitialHeight();
-        el.style.height = minHeight;
+        let baseHeight = 0;
 
         const updateHeight = () => {
             el.style.height = 'auto';
-            el.style.height = Math.max(el.scrollHeight, parseInt(minHeight)) + 'px';
+            el.style.height = Math.max(el.scrollHeight, baseHeight) + 'px';
         };
 
-        updateHeight();
-
         effect(() => {
+            window.requestAnimationFrame(() => {
+                baseHeight = el.scrollHeight;
+                updateHeight();
+            });
+
             el.addEventListener('input', updateHeight);
         });
 
