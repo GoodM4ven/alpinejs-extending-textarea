@@ -30,5 +30,8 @@
   "main": "src/index.js",
   "scripts": {
     "build": "esbuild src/index.js --format=esm --bundle --minify --sourcemap --outfile=dist/alpinejs-extending-textarea.js"
+  },
+  "devDependencies": {
+    "@semantic-release/git": "^10.0.1"
   }
 }
