@@ -2,6 +2,10 @@
     بسم الله الرحمن الرحيم
 </div>
 
+### Update Note
+
+If you're using Filament Forms [textarea field](https://filamentphp.com/docs/3.x/forms/fields/textarea#autosizing-the-textarea), there's an optional `autosize()` method that you could use to apply a similar logic internally real-quick. And therefore, you wouldn't need this package.
+
 # AlpineJS Extending Textarea
 An [AlpineJS](https://alpinejs.dev/) **plugin** to ensure that the text-area expands as it has more input than its height can fit.
 
